@@ -1,0 +1,56 @@
+package com.jap.areacalculator;
+
+import java.util.Scanner;
+
+public class AreaCalculator {
+	
+    public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+        System.out.println("Select an option from list to calculate area of fence");
+        System.out.println("1. Square area for the chickens");
+        System.out.println("2. Circular area for ducks");
+        System.out.println("3. Rectangular area for cows");
+        System.out.println();
+        // Input choice from user
+        int choice = scanner.nextInt();
+		AreaCalculator areaCalculator=new AreaCalculator();
+		areaCalculator.calculateAreaOfFence(choice);
+
+        // Make a call to calculateAreaOfFence(int choice) and pass the choice made by user to it
+
+    }
+
+    // Function to calculate area of fence by calling respective methods according to user's choice
+    public void calculateAreaOfFence(int choice) {
+		Scanner scanner = new Scanner(System.in);
+		if (choice==1){
+			double side=scanner.nextDouble();
+			System.out.println(this.calculateAreaOfSquare(side));
+		}
+		else if(choice==2){
+			double radius=scanner.nextDouble();
+			System.out.println(this.calculateAreaOfCircle(radius));
+		}
+		else{
+			double length=scanner.nextDouble();
+			double breadth=scanner.nextDouble();
+			System.out.println(this.calculateAreaOfRectangle(length,breadth));
+		}
+
+    }
+
+    // Function to calculate area of square
+    public double calculateAreaOfSquare(double side) {
+        return side*side;
+    }
+
+    // Function to calculate area of circle
+    public double calculateAreaOfCircle(double radius) {
+        return 3.14*radius*radius;
+    }
+
+    // Function to calculate area of rectangle
+    public double calculateAreaOfRectangle(double length, double breadth) {
+        return length*breadth;
+    }
+}

@@ -1,0 +1,58 @@
+package com.jap.bookstore;
+
+public class Book {
+     Implement data hiding by declaring member variables private
+    int ISBNNo;
+    String bookName;
+    Author author;
+    String genre;
+    float price;
+
+     Declare getter and setter methods
+
+     Method to display the details of a book
+    Book(int ISBNNo,String bookName,Author author,String genre,float price){
+    	this.ISBNNo=ISBNNo;
+    	this.bookName=bookName;
+    	this.author=author;
+    	this.genre=genre;
+    	this.price=price;
+    }
+    public void setISBNNO(int ISBNNo) {
+ 	   this.ISBNNo=ISBNNo;
+    }
+    public int getISBNNo(){
+ 	   return ISBNNo;
+    }
+    public void setBookName(String bookName) {
+ 	   this.bookName=bookName;
+    }
+    public String getBookName() {
+ 	   return bookName;
+    }
+    public void setAuthor(Author author) {
+ 	   this.author=author;
+    }
+    public Author getAuthor() {
+ 	   return author;
+    }
+    public void setGenre(String genre) {
+  	   this.genre=genre;
+     }
+     public String getGenre() {
+  	   return genre;
+     }
+    public void setPrice(float price) {
+ 	   this.price=price;
+    }
+    public float getPrice() {
+ 	   return price;
+    }
+    
+    public String displayBookDetails()
+    {
+        return this.getISBNNo()++this.getBookName()++this.author.getAuthorName()++this.getGenre()+ $+this.getPrice();
+    }
+
+
+}

@@ -1,0 +1,36 @@
+package com.jap.bookstore;
+
+public class BookStoreImpl {
+    public static void main(String[] args) {
+        // Declare and initialize author, book and bookstore objects
+        // Use the get and set methods to set values to the variables
+    	Author author = new Author("Charles Darwin","Darwin");
+        Book book = new Book(1123,"The Voyage of the Beagle",author, "SCIENTIFIC",120);
+        Author author1 = new Author("JL Baird","Baird");
+        Book book1 = new Book(1123,"Mocking Bird",author1,"FICTION",45);
+        Author author2 = new Author("TS Elliot","Elliot");
+        Book book2 = new Book(1123,"Jane Eyre",author,"FICTION",35);
+        Book[] books = new Book[]{book,book1,book2};
+        Bookstore bookStore = new Bookstore("Just Read","1256",books);
+
+        //Display book details before discount is calculated
+        System.out.println("The book details before discount : ");
+        System.out.println("Book name is: "+books[2].getBookName());
+        System.out.println("Author name is: "+books[2].getAuthor().getAuthorName());
+        System.out.println("The price is: "+books[2].getPrice());
+
+        //Calculate discount on the books by calling the methods
+
+        //Display book details after discount is calculated
+        System.out.println("The book details after discount : ");
+        System.out.println("Book name is: "+books[2].getBookName());
+        System.out.println("Author name is: "+books[2].getAuthor().getAuthorName());
+        if(books[2].getGenre().equals("FICTION")) {
+        	System.out.println("The price is: "+bookStore.calculateDiscount(books[2], 25));
+        }
+        else {
+        	System.out.println("The price is: "+bookStore.calculateDiscount(books[2], 0));
+        }
+        }
+
+}
